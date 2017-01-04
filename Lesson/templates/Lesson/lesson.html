@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block course %}
+    <h2>{{ lesson.get }}</h2>
+    {% for discuss in discussion.all %}
+        <h5>{{ discuss.text }}</h5>
+    {% endfor %}
+{#    {% for discuss in discussion.objects.all %}#}
+{#        <h4>{{ discuss }}</h4>#}
+{#    {% endfor %}#}
+    
+
+{% endblock %}

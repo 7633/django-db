@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block course %}
+    <h2>{{ course.course_name }}</h2>
+    <pre>{{ course.description }}</pre>
+    {% for author in course.authors.all %}
+        <h4>{{ author.first_name }} {{ author.last_name }}</h4>
+        <h4>{{ author.email }}</h4>
+    {% endfor %}
+    {% for lesso in lesson %}
+        <h4><a href="{% url "show_lesson" course_id=course.id lesson_id=lesso.id %}">{{ lesso.name }}</a></h4>
+    {% endfor %}
+
+    {% for discuss in discussion %}
+        <h5>{{ discuss.text }}</h5>
+    {% endfor %}
+{#    {% for discuss in discussion.objects.all %}#}
+{#        <h4>{{ discuss }}</h4>#}
+{#    {% endfor %}#}
+    
+
+{% endblock %}
