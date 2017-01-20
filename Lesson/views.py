@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from Lesson.models import Course, Discussion, Lesson
-
+# from Lesson.forms import CommentForm
+from django.views.decorators.csrf import csrf_protect
 
 def home(request):
     courses = Course.objects.all()
@@ -25,3 +26,5 @@ def show_lesson(request, course_id=1, lesson_id=1):
                       'lesson': Lesson.objects.filter(course_id=course_id, id=lesson_id),
                       'discussion': Discussion.objects.filter(lesson_id=lesson_id)
                    })
+#
+# # def add_comment():

@@ -2,12 +2,19 @@
 
 {% block course %}
     <h2>{{ lesson.get }}</h2>
-    {% for discuss in discussion.all %}
-        <h5>{{ discuss.text }}</h5>
-    {% endfor %}
 {#    {% for discuss in discussion.objects.all %}#}
 {#        <h4>{{ discuss }}</h4>#}
 {#    {% endfor %}#}
-    
+
+    <div class="row">
+        <div class="large-offset-1 large-4 columns">
+            <h6>Comments:</h6>
+            {% for discuss in discussion %}
+                <h5>{{ discuss.text }}</h5>
+            {% endfor %}
+{#            <textarea class="text-left" name="comments">{{  }}</textarea>#}
+            <input class="button" type="submit" value="submit"/>
+        </div>
+    </div>
 
 {% endblock %}

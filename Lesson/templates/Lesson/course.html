@@ -11,9 +11,6 @@
         <h4><a href="{% url "show_lesson" course_id=course.id lesson_id=lesso.id %}">{{ lesso.name }}</a></h4>
     {% endfor %}
 
-    {% for discuss in discussion %}
-        <h5>{{ discuss.text }}</h5>
-    {% endfor %}
 {#    {% for discuss in discussion.objects.all %}#}
 {#        <h4>{{ discuss }}</h4>#}
 {#    {% endfor %}#}

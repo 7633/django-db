@@ -45,6 +45,9 @@ class Discussion(models.Model):
         managed = False
         db_table = 'discussion'
 
+    def __str__(self):
+        return '[' + self.lesson.name + '] ' + str(self.discussion_set.count())
+
 
 class DjangoMigrations(models.Model):
     app = models.CharField(max_length=255)
